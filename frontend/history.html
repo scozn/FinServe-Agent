@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinServe Agent · 历史记录</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body data-page="history">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="FinServe Agent 首页"><span class="brand-mark">✦</span><span>FinServe<span class="brand-sub">Agent · 智能客服</span></span></a>
+      <div class="sidebar-section-label">工作空间</div>
+      <nav class="main-nav" aria-label="主导航">
+        <a class="nav-link" href="/"><span class="nav-icon">◈</span> 智能对话</a>
+        <a class="nav-link active" href="/history" aria-current="page"><span class="nav-icon">▤</span> 历史记录</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-heading"><span>最近对话</span></div>
+      <div id="recent-sessions" class="recent-sessions"></div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> 客服助手已就绪</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><div class="breadcrumb">工作空间 <span>/</span> 历史记录</div><a class="text-button" href="/">开始新对话 <span>↗</span></a></header>
+      <section class="history-stage">
+        <div class="history-intro"><div class="eyebrow">CONVERSATION ARCHIVE / 02</div><h1>历史记录</h1><p>找回之前的咨询，继续未完成的对话。</p></div>
+        <div class="history-layout">
+          <div class="history-list-panel">
+            <div class="list-heading"><div><strong>我的对话</strong><span id="session-count"></span></div><label class="sr-only" for="history-search">搜索对话</label><input id="history-search" type="search" placeholder="搜索对话标题"></div>
+            <div id="history-list" class="history-list"></div>
+          </div>
+          <div class="history-detail-panel" id="history-detail"><div class="detail-empty"><div class="welcome-symbol">▤</div><h2>选择一条对话</h2><p>点击左侧记录，查看完整聊天内容。</p></div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

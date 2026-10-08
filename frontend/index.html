@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinServe Agent · 对话</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body data-page="chat">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="FinServe Agent 首页"><span class="brand-mark">✦</span><span>FinServe<span class="brand-sub">Agent · 智能客服</span></span></a>
+      <div class="sidebar-section-label">工作空间</div>
+      <nav class="main-nav" aria-label="主导航">
+        <a class="nav-link active" href="/" aria-current="page"><span class="nav-icon">◈</span> 智能对话</a>
+        <a class="nav-link" href="/history"><span class="nav-icon">▤</span> 历史记录</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-heading"><span>最近对话</span><a href="/history">查看全部 →</a></div>
+      <div id="recent-sessions" class="recent-sessions"></div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> 客服助手已就绪</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb">工作空间 <span>/</span> 智能对话</div>
+        <a class="text-button" href="/history">查看历史记录 <span>↗</span></a>
+      </header>
+      <section class="chat-stage" aria-label="对话">
+        <div class="chat-header">
+          <div><div class="eyebrow">SMART SERVICE / 01</div><h1>智能对话</h1><p>咨询产品、业务流程或服务问题，随时获得帮助。</p></div>
+          <button id="new-chat" class="outline-button" type="button"><span>＋</span> 新建对话</button>
+        </div>
+        <div id="messages" class="messages" aria-live="polite">
+          <div class="welcome" id="welcome">
+            <div class="welcome-symbol">✦</div>
+            <div class="eyebrow">您的专属服务助手</div>
+            <h2>你好，有什么可以帮你？</h2>
+            <p>从一个问题开始，助手会结合知识库与业务流程为你解答。</p>
+            <div class="suggestions">
+              <button type="button" data-prompt="如何申请退款？">如何申请退款？ <span>↗</span></button>
+              <button type="button" data-prompt="有哪些理财产品可供了解？">了解理财产品 <span>↗</span></button>
+              <button type="button" data-prompt="我想查询工单进度">查询工单进度 <span>↗</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="composer-wrap">
+          <div id="chat-error" class="notice" role="alert" hidden></div>
+          <form id="chat-form" class="composer">
+            <label class="sr-only" for="message-input">输入问题</label>
+            <textarea id="message-input" rows="1" maxlength="4000" placeholder="输入你的问题..." required></textarea>
+            <button id="send-button" type="submit" aria-label="发送消息">↑</button>
+          </form>
+          <p class="composer-hint">按 Enter 发送，Shift + Enter 换行 · 回答仅供参考</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
