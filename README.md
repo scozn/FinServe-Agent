@@ -1,8 +1,7 @@
 # FinServe Agent
 
-**面向金融服务场景的多 Agent 智能客服原型。** 基于 FastAPI 与 LangGraph，提供知识库问答、演示工单处理、合规审查和对话页面。
+**面向金融服务场景的多 Agent 智能客服原型。** 基于 FastAPI 与 LangGraphd的Multi-Agent系统，提供知识库问答、工单处理、合规审查和对话页面等核心功能。
 
-> 当前仓库仅包含 Python 实现。工单、订单和风控工具使用演示数据；项目适合学习与原型验证，不能直接作为真实客服或金融业务系统上线。
 
 ## 功能与流程
 
@@ -22,7 +21,7 @@
 
 ## 快速开始
 
-在仓库根目录操作。需要 Python 3.12 和一个兼容 OpenAI Chat Completions 的模型 API Key。使用知识库问答还需要 DashScope API Key；Redis 可选。
+在仓库根目录操作。需要 Python 3.12 和一个兼容 OpenAI Chat Completions 的模型 API Key。Redis 可选。
 
 ```bash
 python -m venv .venv
@@ -40,7 +39,7 @@ Windows PowerShell 可用 `Copy-Item .env.example .env` 复制配置文件。编
 python -m api.main
 ```
 
-打开 [http://localhost:8000/](http://localhost:8000/) 使用聊天页，或打开 [http://localhost:8000/docs](http://localhost:8000/docs) 查看 API 文档。健康检查为 `GET /health`。
+健康检查为 `GET /health`。
 
 ### Docker
 
@@ -97,14 +96,6 @@ FinServe-Agent/
 ## 评测
 
 `evaluation/` 提供 50 条知识库问答样本和可选的 Ragas 评测脚本。评测会调用外部模型并产生费用；依赖与运行说明见 [评测说明](evaluation/README.md)。
-
-## 当前限制
-
-- 工单和 LangGraph checkpoint 存在进程内；重启或多进程部署后不能保证保留。
-- Redis 会话默认保留最近 20 轮，TTL 为 30 分钟；无 Redis 时仅在当前进程内保存。
-- 演示接口没有用户认证、权限隔离或真实业务系统连接；不要公开部署到互联网。
-- 知识库检索首次使用时需要调用 DashScope 为文档建立内存向量索引；修改知识库后需重启服务。
-- 当前聊天 API 返回完整答案，不提供 SSE 流式响应。
 
 ## 开源协议
 
