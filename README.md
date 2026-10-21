@@ -1,7 +1,8 @@
 # FinServe Agent
 
-**面向金融服务场景的多 Agent 智能客服原型。** 基于 FastAPI 与 LangGraphd的Multi-Agent系统，提供知识库问答、工单处理、合规审查和对话页面等核心功能。
+**面向金融服务场景的多 Agent 智能客服原型。** 基于 FastAPI 与 LangGraph的Multi-Agent系统，提供知识库问答、工单处理、合规审查和对话页面等核心功能。
 
+<img width="1867" height="900" alt="image" src="https://github.com/user-attachments/assets/3c90dc33-ae7e-46e7-95b7-e22b70c01a12" />
 
 ## 功能与流程
 
