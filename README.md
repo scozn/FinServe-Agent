@@ -16,7 +16,7 @@
 - **工单演示**：根据用户请求创建工单，或用工单号查询进度。工单保存在当前进程内，重启后清空。
 - **会话历史**：Redis 可选；未连接时保存在当前进程内。网页的会话列表保存在当前浏览器的 `localStorage`。
 - **合规检查**：规则检查敏感词和个人信息，再用模型审查回答。不应将其视为正式的合规保证。
-- **工具接口**：FastMCP 提供订单查询、知识库搜索、工单创建和风控检查示例工具；`/api/tools` 可查看和调用它们。这些工具目前没有接入主 Agent 流程或真实业务系统。
+- **工具接口**：FastMCP 提供订单查询、知识库搜索、工单创建和风控检查示例工具；`/api/tools` 可查看和调用它们。
 
 ## 快速开始
 
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Windows PowerShell 可用 `Copy-Item .env.example .env` 复制配置文件。编辑 `.env`，至少设置 `OPENAI_API_KEY`；知识库问答还需设置 `DASHSCOPE_API_KEY`。如果使用其他兼容 OpenAI API 的服务，同时修改 `OPENAI_BASE_URL` 和 `MODEL_NAME`。不要把 `.env` 或真实 Key 提交到 GitHub。
+Windows PowerShell 可用 `Copy-Item .env.example .env` 复制配置文件。编辑 `.env`，至少设置 `OPENAI_API_KEY`；知识库问答还需设置 `DASHSCOPE_API_KEY`。如果使用其他兼容 OpenAI API 的服务，同时修改 `OPENAI_BASE_URL` 和 `MODEL_NAME`。
 
 从仓库根目录启动：
 
